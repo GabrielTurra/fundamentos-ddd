@@ -25,7 +25,7 @@ export class Question extends Entity<QuestionProps> {
   }
 
   get title() {
-    return this.props.content;
+    return this.props.title;
   }
 
   set title(title: string) {
