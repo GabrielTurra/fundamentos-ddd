@@ -1,21 +1,23 @@
 import { AnswerQuestionUseCase } from './answer-question';
-import type { AnswersRepository } from '@/domain/forum/application/repositories/answers-repository';
-import type { Answer } from '@/domain/forum/enterprise/entities/answer';
+import { InMemoryAnswersRepository } from 'test/repositories/in-memory-answers-repository';
 
-const fakeAnswersRepository: AnswersRepository = {
-  create: async (answers: Answer) => {
-    return;
-  }
-};
+let inMemoryAnswersRepository: InMemoryAnswersRepository;
+let sut: AnswerQuestionUseCase;
 
-test('create an answer', async () => {
-  const answerQuestionUseCase = new AnswerQuestionUseCase(fakeAnswersRepository);
-
-  const { answer } = await answerQuestionUseCase.execute({
-    instructorId: '1',
-    questionId: '1',
-    content: 'New Answer'
+describe('Create Answer', () => {
+  beforeEach(() => {
+    inMemoryAnswersRepository = new InMemoryAnswersRepository();
+    sut = new AnswerQuestionUseCase(inMemoryAnswersRepository);
   });
 
-  expect(answer.content).toEqual('New Answer');
+  it('should be able to create an answer', async () => {
+    const { answer } = await sut.execute({
+      instructorId: '1',
+      questionId: '1',
+      content: 'New Answer Content'
+    });
+
+    expect(answer.content).toEqual('New Answer Content');
+    expect(inMemoryAnswersRepository.items[0].id).toEqual(answer.id);
+  });
 });
