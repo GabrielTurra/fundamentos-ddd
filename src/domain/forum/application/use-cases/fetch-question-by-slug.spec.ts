@@ -1,18 +1,18 @@
-import { GetQuestionBySlugUseCase } from './get-question-by-slug';
+import { FetchQuestionBySlugUseCase } from './fetch-question-by-slug';
 import { InMemoryQuestionsRepository } from '@/test/repositories/in-memory-questions-repository';
 import { Slug } from '../../enterprise/entities/value-objects/slug';
 import { makeQuestion } from '@/test/factories/make-question';
 
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository;
-let sut: GetQuestionBySlugUseCase;
+let sut: FetchQuestionBySlugUseCase;
 
-describe('Get Question By Slug', () => {
+describe('Fetch Question By Slug', () => {
   beforeEach(() => {
     inMemoryQuestionsRepository = new InMemoryQuestionsRepository();
-    sut = new GetQuestionBySlugUseCase(inMemoryQuestionsRepository);
+    sut = new FetchQuestionBySlugUseCase(inMemoryQuestionsRepository);
   });
 
-  it('should be able to get a question by slug', async () => {
+  it('should be able to fetch a question by slug', async () => {
     const newQuestion = makeQuestion({
       slug: Slug.create('example-question')
     });
