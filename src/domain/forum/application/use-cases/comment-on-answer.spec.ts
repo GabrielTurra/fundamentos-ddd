@@ -1,6 +1,6 @@
 import { InMemoryAnswersRepository } from '@/test/repositories/in-memory-answers-repository';
 import { makeAnswer } from '@/test/factories/make-answer';
-import { InMemoryAnswerCommentsRepository } from '@/test/repositories/in-memory-answer-comment-repository';
+import { InMemoryAnswerCommentsRepository } from '@/test/repositories/in-memory-answer-comments-repository';
 import { CommentOnAnswerUseCase } from './comment-on-answer';
 
 let inMemoryAnswersRepository: InMemoryAnswersRepository;
