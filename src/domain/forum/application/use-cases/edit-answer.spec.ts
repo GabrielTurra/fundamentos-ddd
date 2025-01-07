@@ -19,7 +19,9 @@ describe('Edit Answer', () => {
 
     await inMemoryAnswersRepository.create(newAnswer);
 
-    expect(inMemoryAnswersRepository.items[0].content).toEqual('On created content');
+    expect(inMemoryAnswersRepository.items[0].content).toEqual(
+      'On created content'
+    );
     expect(inMemoryAnswersRepository.items[0].id).toEqual(newAnswer.id);
 
     await sut.execute({

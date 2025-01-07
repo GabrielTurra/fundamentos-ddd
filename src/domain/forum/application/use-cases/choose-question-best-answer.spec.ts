@@ -12,7 +12,10 @@ describe('Choose Question Best Answer', () => {
   beforeEach(() => {
     inMemoryQuestionsRepository = new InMemoryQuestionsRepository();
     inMemoryAnswersRepository = new InMemoryAnswersRepository();
-    sut = new ChooseQuestionBestAnswerUseCase(inMemoryQuestionsRepository, inMemoryAnswersRepository);
+    sut = new ChooseQuestionBestAnswerUseCase(
+      inMemoryQuestionsRepository,
+      inMemoryAnswersRepository
+    );
   });
 
   it('should be able to choose question best answer', async () => {
@@ -30,7 +33,9 @@ describe('Choose Question Best Answer', () => {
       authorId: newQuestion.authorId.toString()
     });
 
-    expect(inMemoryQuestionsRepository.items[0].bestAnswerId).toEqual(newAnswer.id);
+    expect(inMemoryQuestionsRepository.items[0].bestAnswerId).toEqual(
+      newAnswer.id
+    );
   });
 
   it('should not be able to choose question best answer from another author', async () => {

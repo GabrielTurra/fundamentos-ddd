@@ -14,7 +14,11 @@ type EditAnswerUseCaseResponse = {
 export class EditAnswerUseCase {
   constructor(private answersRepository: AnswersRepository) {}
 
-  async execute({ answerId, authorId, content }: EditAnswerUseCaseRequest): Promise<EditAnswerUseCaseResponse> {
+  async execute({
+    answerId,
+    authorId,
+    content
+  }: EditAnswerUseCaseRequest): Promise<EditAnswerUseCaseResponse> {
     const answer = await this.answersRepository.findById(answerId);
 
     if (!answer) {

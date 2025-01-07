@@ -11,7 +11,10 @@ type DeleteAnswerUseCaseResponse = {};
 export class DeleteAnswerUseCase {
   constructor(private answersRepository: AnswersRepository) {}
 
-  async execute({ answerId, authorId }: DeleteAnswerUseCaseRequest): Promise<DeleteAnswerUseCaseResponse> {
+  async execute({
+    answerId,
+    authorId
+  }: DeleteAnswerUseCaseRequest): Promise<DeleteAnswerUseCaseResponse> {
     const answer = await this.answersRepository.findById(answerId);
 
     if (!answer) {

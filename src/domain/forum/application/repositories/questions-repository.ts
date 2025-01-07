@@ -1,3 +1,4 @@
+import type { PaginationParams } from '@/core/repositories/pagination-params';
 import type { Question } from '@/domain/forum/enterprise/entities/question';
 
 export interface QuestionsRepository {
@@ -6,4 +7,5 @@ export interface QuestionsRepository {
   delete(question: Question): Promise<void>;
   findBySlug(slug: string): Promise<Question | null>;
   findById(id: string): Promise<Question | null>;
+  findManyRecent(params: PaginationParams): Promise<Question[]>;
 }

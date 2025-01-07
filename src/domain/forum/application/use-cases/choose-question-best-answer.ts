@@ -27,7 +27,9 @@ export class ChooseQuestionBestAnswerUseCase {
       throw new Error('Answer not found!');
     }
 
-    const question = await this.questionsRepository.findById(answer.questionId.toString());
+    const question = await this.questionsRepository.findById(
+      answer.questionId.toString()
+    );
 
     if (!question) {
       throw new Error('Question not found!');
