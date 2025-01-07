@@ -25,9 +25,11 @@ describe('Comment Question', () => {
     await sut.execute({
       questionId: newQuestion.id.toString(),
       authorId: newQuestion.authorId.toString(),
-      content: 'Comment content Test'
+      content: 'Comment Question Content Test'
     });
 
-    expect(inMemoryQuestionCommentsRepository.items[0].content).toEqual('Comment content Test');
+    expect(inMemoryQuestionCommentsRepository.items[0].content).toEqual(
+      'Comment Question Content Test'
+    );
   });
 });
