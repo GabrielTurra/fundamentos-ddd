@@ -9,7 +9,7 @@ export function makeQuestion(override: Partial<QuestionProps> = {}, id?: UniqueE
 
   const question = Question.create(
     {
-      authorId: new UniqueEntityID(`${faker.number.int()}`),
+      authorId: new UniqueEntityID(),
       content: faker.lorem.text(),
       title,
       slug: Slug.create(title),
