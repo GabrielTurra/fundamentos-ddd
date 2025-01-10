@@ -26,7 +26,7 @@ export class InMemoryQuestionsRepository implements QuestionsRepository {
     );
     this.items.splice(findQuestionIndex, 1);
 
-    this.questionAttachmentsRepository.deleteManyByQuestionId(question.id.toString());
+    await this.questionAttachmentsRepository.deleteManyByQuestionId(question.id.toString());
   }
 
   async findBySlug(slug: string) {

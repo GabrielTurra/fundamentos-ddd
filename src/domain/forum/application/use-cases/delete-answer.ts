@@ -1,4 +1,3 @@
-import { Answer } from '@/domain/forum/enterprise/entities/answer';
 import type { AnswersRepository } from '../repositories/answers-repository';
 import { left, right, type Either } from '@/core/errors/either';
 import { ResourceNotFoundError } from './errors/resource-not-found-error';
