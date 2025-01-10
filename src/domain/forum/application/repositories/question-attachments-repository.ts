@@ -2,4 +2,5 @@ import type { QuestionAttachment } from '@/domain/forum/enterprise/entities/ques
 
 export interface QuestionAttachmentsRepository {
   findManyByQuestionId(questionId: string): Promise<QuestionAttachment[]>;
+  deleteManyByQuestionId(questionId: string): Promise<void>;
 }
