@@ -27,6 +27,9 @@
       "complexity": {
         "noBannedTypes": "off"
       },
+      "correctness": {
+        "noUnusedImports": "error"
+      },
       "suspicious": {
         "noExplicitAny": "off"
       }
