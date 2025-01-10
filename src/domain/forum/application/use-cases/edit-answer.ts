@@ -1,8 +1,8 @@
 import type { Answer } from '@/domain/forum/enterprise/entities/answer';
 import type { AnswersRepository } from '../repositories/answers-repository';
 import { left, right, type Either } from '@/core/errors/either';
-import { ResourceNotFoundError } from './errors/resource-not-found-error';
-import { NotAllowedError } from './errors/not-allowed-error';
+import { ResourceNotFoundError } from '@/core/errors/global-errors/resource-not-found-error';
+import { NotAllowedError } from '@/core/errors/global-errors/not-allowed-error';
 import { AnswerAttachment } from '../../enterprise/entities/answer-attachment';
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 import { AnswerAttachmentList } from '../../enterprise/entities/answer-attachment-list';

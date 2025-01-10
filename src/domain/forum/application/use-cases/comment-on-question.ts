@@ -3,7 +3,7 @@ import { QuestionComment } from '@/domain/forum/enterprise/entities/question-com
 import type { QuestionCommentsRepository } from '../repositories/question-comments-repository';
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 import { type Either, left, right } from '@/core/errors/either';
-import { ResourceNotFoundError } from './errors/resource-not-found-error';
+import { ResourceNotFoundError } from '@/core/errors/global-errors/resource-not-found-error';
 
 type CommentOnQuestionUseCaseRequest = {
   authorId: string;

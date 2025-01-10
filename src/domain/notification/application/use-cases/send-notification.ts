@@ -1,10 +1,10 @@
-import type { UniqueEntityID } from '@/core/entities/unique-entity-id';
 import { right, type Either } from '@/core/errors/either';
 import { Notification } from '../../enterprise/entities/notification';
 import type { NotificationsRepository } from '../repositories/notifications-repository';
+import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 
 type SendNotificationUseCaseRequest = {
-  recipientId: UniqueEntityID;
+  recipientId: string;
   title: string;
   content: string;
 };
@@ -20,7 +20,7 @@ export class SendNotificationUseCase {
     content
   }: SendNotificationUseCaseRequest): Promise<SendNotificationUseCaseResponse> {
     const notification = Notification.create({
-      recipientId,
+      recipientId: new UniqueEntityID(recipientId),
       title,
       content
     });

@@ -1,7 +1,7 @@
 import type { Question } from '@/domain/forum/enterprise/entities/question';
 import type { QuestionsRepository } from '../repositories/questions-repository';
-import { ResourceNotFoundError } from './errors/resource-not-found-error';
-import { NotAllowedError } from './errors/not-allowed-error';
+import { ResourceNotFoundError } from '@/core/errors/global-errors/resource-not-found-error';
+import { NotAllowedError } from '@/core/errors/global-errors/not-allowed-error';
 import { type Either, left, right } from '@/core/errors/either';
 import type { QuestionAttachmentsRepository } from '../repositories/question-attachments-repository';
 import { QuestionAttachmentList } from '../../enterprise/entities/question-attachment-list';

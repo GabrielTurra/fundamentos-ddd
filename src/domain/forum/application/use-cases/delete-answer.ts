@@ -1,7 +1,7 @@
 import type { AnswersRepository } from '../repositories/answers-repository';
 import { left, right, type Either } from '@/core/errors/either';
-import { ResourceNotFoundError } from './errors/resource-not-found-error';
-import { NotAllowedError } from './errors/not-allowed-error';
+import { ResourceNotFoundError } from '@/core/errors/global-errors/resource-not-found-error';
+import { NotAllowedError } from '@/core/errors/global-errors/not-allowed-error';
 
 type DeleteAnswerUseCaseRequest = {
   answerId: string;
