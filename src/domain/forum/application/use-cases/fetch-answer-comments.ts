@@ -1,14 +1,13 @@
 import type { AnswerComment } from '@/domain/forum/enterprise/entities/answer-comment';
 import type { AnswerCommentsRepository } from '../repositories/answer-comments-repository';
+import { right, type Either } from '@/core/errors/either';
 
 type FetchAnswerCommentsUseCaseRequest = {
   answerId: string;
   page: number;
 };
 
-interface FetchAnswerCommentsUseCaseResponse {
-  answerComments: AnswerComment[];
-}
+type FetchAnswerCommentsUseCaseResponse = Either<null, { answerComments: AnswerComment[] }>;
 
 export class FetchAnswerCommentsUseCase {
   constructor(private answerCommentsRepository: AnswerCommentsRepository) {}
@@ -21,6 +20,6 @@ export class FetchAnswerCommentsUseCase {
       page
     });
 
-    return { answerComments };
+    return right({ answerComments });
   }
 }
