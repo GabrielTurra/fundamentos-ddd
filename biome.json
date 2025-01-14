@@ -25,7 +25,10 @@
     "rules": {
       "recommended": true,
       "complexity": {
-        "noBannedTypes": "off"
+        "noBannedTypes": "off",
+        "noStaticOnlyClass": "off",
+        "noThisInStatic": "off",
+        "noForEach": "off"
       },
       "correctness": {
         "noUnusedImports": "error"
